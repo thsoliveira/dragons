@@ -1,0 +1,36 @@
+<section>
+   <div class="container-fluid">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+         <mat-card>
+            <mat-card-header>
+               <div mat-card-avatar class="header-image"></div>
+               <mat-card-title>Sign in to Arcanum</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+
+               <mat-form-field class="form-element">
+                  <input matInput placeholder="Username" formControlName="username">
+                  <mat-error *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">
+                     This field is required
+                  </mat-error>
+               </mat-form-field>
+
+               <mat-form-field class="form-element">
+                  <input type="password" matInput placeholder="Password" formControlName="password">
+
+                  <mat-error *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+                     This field is required
+                  </mat-error>
+               </mat-form-field>
+
+               <div class="form-element">
+                  <button mat-raised-button color="primary" type="submit" class="button"
+                     [disabled]="!loginForm.valid">Login</button>
+               </div>
+               
+            </mat-card-content>
+         </mat-card>
+      </form>
+   </div>
+</section>

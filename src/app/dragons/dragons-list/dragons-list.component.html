@@ -1,0 +1,39 @@
+<div class="container" *ngIf="dragons">
+
+	<div class="list-header">
+		<h3>All the dragons</h3>
+
+		<button mat-raised-button color="primary" [routerLink]="['/dragon-add']"> New Dragon </button>
+	</div>
+
+	<p-table [columns]="cols" [value]="dragons" selectionMode="single" sortField="name" sortOrder="1">
+		<ng-template pTemplate="header" let-columns>
+			<tr>
+				<th *ngFor="let col of columns" [pSortableColumn]="col.field">
+					{{col.header}}
+				</th>
+				<th style="width:4em"></th>
+				<th style="width:4em"></th>
+			</tr>
+		</ng-template>
+		
+		<ng-template pTemplate="body" let-rowData let-columns="columns">
+			<tr>
+				<td *ngFor="let col of columns" (click)="seeDragon(rowData)">
+					{{rowData[col.field]}}
+				</td>
+				<td>
+					<button mat-icon-button color="primary" (click)="edit(rowData)">
+						<mat-icon>edit</mat-icon>
+					</button>
+				</td>
+				<td>
+					<button mat-icon-button color="warn" (click)="delete(rowData)">
+						<mat-icon>delete</mat-icon>
+					</button>
+				</td>
+			</tr>
+		</ng-template>
+	</p-table>
+
+</div>
