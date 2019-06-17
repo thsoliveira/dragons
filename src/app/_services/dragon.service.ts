@@ -27,12 +27,11 @@ export class DragonService {
 	}
 
 	getDragon(id: number | string): Observable<Dragon> {
-		const url = `${this.apiUrl}/?id=${id}`;
-		return this._http.get<Dragon[]>(url)
+		const url = `${this.apiUrl}/${id}`;
+		return this._http.get<Dragon>(url)
 			.pipe(
-				map(dragons => dragons[0]), // returns a {0|1} element array
-				tap(h => {
-					const outcome = h ? `fetched` : `did not find`;
+				tap(dragon => {
+					const outcome = dragon ? `fetched` : `did not find`;
 					this.log(`${outcome} dragon id=${id}`);
 				}),
 				catchError(this.handleError<Dragon>(`getDragon id=${id}`))

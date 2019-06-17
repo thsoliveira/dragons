@@ -1,0 +1,41 @@
+<div class="container">
+	<div class="button-row">
+		<button mat-raised-button color="primary" [routerLink]="['/']"> Voltar </button>
+	</div>
+	<form [formGroup]="dragonForm" (ngSubmit)="onSubmit()">
+		<mat-card>
+
+			<mat-card-header>
+				<mat-card-title *ngIf="newDragon">A ascensão de um novo dragão</mat-card-title>
+				<mat-card-title *ngIf="!newDragon">Atualizar dragão</mat-card-title>
+			</mat-card-header>
+
+			<mat-card-content>
+
+				<mat-form-field class="form-element">
+					<input matInput placeholder="Nome" formControlName="name">
+					<mat-error *ngIf="!dragonForm.get('name').valid && dragonForm.get('name').touched">
+						Este campo é obrigatório
+					</mat-error>
+				</mat-form-field>
+
+				<mat-form-field class="form-element">
+					<input matInput placeholder="Espécie" formControlName="type">
+
+					<mat-error *ngIf="!dragonForm.get('type').valid && dragonForm.get('type').touched">
+						Este campo é obrigatório
+					</mat-error>
+				</mat-form-field>
+
+				<mat-form-field *ngIf="!newDragon" class="form-element">
+					<input matInput formControlName="createdAt">
+				</mat-form-field>
+
+				<div class="form-element">
+					<button mat-raised-button color="primary" type="submit" class="button"
+						[disabled]="!dragonForm.valid">Salvar</button>
+				</div>
+			</mat-card-content>
+		</mat-card>
+	</form>
+</div>

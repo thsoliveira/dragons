@@ -1,6 +1,13 @@
 header {
    background-color: #3f51b5;
 
+   nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+   }
+
    .navbar-item {
       display: table;
       background-color: #f1c84c;
@@ -8,6 +15,8 @@ header {
    }
 
    img {
+      vertical-align: middle;
+      border-style: none;
       width: 50px;
    }
 }

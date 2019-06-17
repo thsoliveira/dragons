@@ -1,0 +1,30 @@
+:host {
+   display: block;
+
+   &::ng-deep {
+      .ui-table .ui-sortable-column.ui-state-highlight {
+         background-color: #3f51b5;
+      }
+
+      .ui-table-tbody>tr,
+      .ui-table-tbody>tr:nth-child(even) {
+         &:hover {
+            cursor: pointer;
+            background-color: #eaeaea;
+         }
+      }
+   }
+}
+
+.list-header {
+   padding-bottom: 1em;
+
+   h3 {
+      display: inline-block;
+   }
+
+   button {
+      float: right;
+   }
+
+}

@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
 
 		// stop here if form is invalid
 		if (this.loginForm.invalid) {
+			this._toastr.warning('Parece que tem algo errado com seu formulário');
 			return;
 		}
 
@@ -43,7 +44,6 @@ export class LoginComponent implements OnInit {
 				catchError => {
 					// Eu não consegui descobrir pq tem um objeto de error dentro de um objeto de error
 					this._toastr.error(catchError.error.error);
-					// this.loading = false;
 				});
 	}
 

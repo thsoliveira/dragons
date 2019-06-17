@@ -1,5 +1,5 @@
 export interface Dragon {
-	id: number;
+	id?: number;
 	createdAt: string;
 	name: string;
    type: number;

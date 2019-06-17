@@ -1,12 +1,13 @@
 <div class="container" *ngIf="dragons">
 
 	<div class="list-header">
-		<h3>All the dragons</h3>
+		<h3>Acervo de dragões</h3>
 
-		<button mat-raised-button color="primary" [routerLink]="['/dragon-add']"> New Dragon </button>
+		<button mat-raised-button color="primary" [routerLink]="['./create']"> Criar Dragão </button>
 	</div>
 
-	<p-table [columns]="cols" [value]="dragons" selectionMode="single" sortField="name" sortOrder="1">
+	<p-table [columns]="cols" [value]="dragons" selectionMode="single" sortField="name" sortOrder="1"
+		*ngIf="dragons.length > 0">
 		<ng-template pTemplate="header" let-columns>
 			<tr>
 				<th *ngFor="let col of columns" [pSortableColumn]="col.field">
@@ -16,10 +17,10 @@
 				<th style="width:4em"></th>
 			</tr>
 		</ng-template>
-		
+
 		<ng-template pTemplate="body" let-rowData let-columns="columns">
 			<tr>
-				<td *ngFor="let col of columns" (click)="seeDragon(rowData)">
+				<td *ngFor="let col of columns" (click)="details(rowData)">
 					{{rowData[col.field]}}
 				</td>
 				<td>
@@ -36,4 +37,11 @@
 		</ng-template>
 	</p-table>
 
+	<mat-card *ngIf="dragons.length === 0">
+
+		<mat-card-header>
+			<mat-card-title>Parece que ainda não existem dragões registrados neste acervo.</mat-card-title>
+		</mat-card-header>
+
+	</mat-card>
 </div>

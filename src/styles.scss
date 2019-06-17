@@ -2,3 +2,34 @@
 @import '~normalize.css/normalize.css';
 @import '~ngx-toastr/toastr';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body{
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.5;
+}
+
+form {
+   .mat-card-header {
+      display: block;
+      text-align: center;
+
+      .mat-card-title {
+         font-size: 1.5em;
+      }
+   }
+}
+
+.form-element {
+   width: 100%;
+   padding-top: 1em;
+
+   .mat-raised-button {
+      width: 100%;
+      margin-top: 1em;
+      text-transform: uppercase;
+
+      &:hover {
+         text-decoration: none;
+      }
+   }
+}

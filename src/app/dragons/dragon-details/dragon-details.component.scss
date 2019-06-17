@@ -1,0 +1,24 @@
+:host {
+   display: block;
+}
+
+img {
+   width: 40px;
+   margin-right: 10px;
+}
+
+.button-row {
+   padding-bottom: 1em;
+   text-align: right;
+}
+
+.mat-card-title {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   margin-bottom: 20px;
+}
+
+.mat-card-content {
+   text-align: right;
+}

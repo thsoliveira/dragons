@@ -25,28 +25,3 @@ section {
       padding: 2em;
    }
 }
-.form-element {
-   width: 100%;
-   padding-top: 1em;
-
-   .mat-raised-button {
-      width: 100%;
-      margin-top: 1em;
-      text-transform: uppercase;
-
-      &:hover {
-         text-decoration: none;
-      }
-   }
-}
-
-form {
-   .mat-card-header {
-      display: block;
-      text-align: center;
-
-      .mat-card-title {
-         font-size: 1.5em;
-      }
-   }
-}
