@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { DragonsComponent } from './dragons/dragons.component';
+import { AuthGuard } from './_services/auth-guard.service';
 
 const routes: Routes = [
 
@@ -10,7 +11,7 @@ const routes: Routes = [
 	{
 		path: 'dragons',
 		component: DragonsComponent,
-		// canActivate: [AuthGuard],
+		canActivate: [AuthGuard],
 	},
 	{ path: '**', redirectTo: '' }
 ];
